@@ -9,20 +9,21 @@ module.exports = {
     getAll,
     getOne,
     create,
-    update,
-    deleteOne
+    deleteOne,
+    update
+    
 };
 
-function deleteOne() {
+function deleteOne(id) {
     skill.splice(id, 1);
 }
 
-function update() {
+function update(id, skill) {
     skill.splice(id, 1, skill);
 }
 
-function create() {
-    skills.push(skills);
+function create(skill) {
+    skills.push(skill);
 }
 
 function getOne(id) {
@@ -31,4 +32,4 @@ function getOne(id) {
 
 function getAll() {
     return skills;
-}idk
+}
