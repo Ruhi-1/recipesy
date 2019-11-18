@@ -15,11 +15,11 @@ module.exports = {
 };
 
 function deleteOne(id) {
-    skill.splice(id, 1);
+    skills.splice(id, 1);
 }
 
 function update(id, skill) {
-    skill.splice(id, 1, skill);
+    skills.splice(id, 1, skill);
 }
 
 function create(skill) {
