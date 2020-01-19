@@ -15,6 +15,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 // import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -80,6 +82,8 @@ export default function RecipeCard() {
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
+        <Button variant="contained">Add</Button>
+
           {/* <ShareIcon /> */}
         </IconButton>
         <IconButton

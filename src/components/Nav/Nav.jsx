@@ -2,30 +2,51 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import List from "@material-ui/core/List";
 // import ListItem from "@material-ui/core/ListItem";
-// import ListItemText from "@material-ui/core/ListItemText";
-// import TypoGraphy from "@material-ui/core/Typography";
+import ListItemText from "@material-ui/core/ListItemText";
+import TypoGraphy from "@material-ui/core/Typography";
+import Header from '../Header/Header';
+// import { ListItemText } from '@material-ui/core';
+// import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 const Nav = (props) => {
 let nav = props.user ?
     <div>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      {/* &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
+      <ListItemText>
+      <TypoGraphy color="inherit" variant="subtitle1">
       <Link to='' onClick={props.handleLogout}>LOG OUT</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Header />
+      </TypoGraphy>
+      </ListItemText>
+      {/* &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
       <span >WELCOME, {props.user.name}</span>
     </div>
     :
     <div>
+      <ListItemText>
+      <TypoGraphy color="inherit" variant="subtitle1">
       <Link to='/login'>LOG IN</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
+      </TypoGraphy>
+      </ListItemText>
+      {/* &nbsp;&nbsp; &nbsp;&nbsp; */}
+      <ListItemText>
+      <TypoGraphy color="inherit" variant="subtitle1">
       <Link to='/signup'>SIGN UP</Link>
+      </TypoGraphy>
+      </ListItemText>
     </div>;
+
   return (
     <div className='NavBar'>
       {nav}
     </div>
+
   );
 };
+
+
+
 
 // function Nav(props) {
 //     return (

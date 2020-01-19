@@ -30,8 +30,7 @@ async function signup(req, res) {
     const user = new User(req.body);
     try {
       await user.save();
-      console.log('user******************************')
-      // Be sure to first delete data that should not be in the token
+      // console.log('user******************************')
       const token = createJWT(user);
       res.json({ token });
     } catch (err) {
