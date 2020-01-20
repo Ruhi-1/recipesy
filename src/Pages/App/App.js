@@ -4,11 +4,14 @@ import './App.css';
 // import { Container } from '@material-ui/core';
 import Nav from '../../components/Nav/Nav';
 // import Header from '../../components/Header/Header';
-import ViewPage from '../ViewPage/ViewPage';
+import ViewPage from '../../components/ViewPage/ViewPage';
+import AddPage from '../../components/AddPage/AddPage';
 import userService from '../../utils/userService';
-import Recipe from '../../components/Recipe/Recipe';
+import Recipe from '../../components/RecipePage/RecipePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
+import HomePage from '../../components/HomePage/HomePage';
+import AddButton from '../../components/AddButton/AddButton';
 
 
 class App extends Component {
@@ -51,8 +54,12 @@ class App extends Component {
         handleSignupOrLogin={this.handleSignupOrLogin}
         />
       }/>
+      <Route path={"/viewpage"} component={ViewPage} />
+      <Route path={"/addpage"} component={AddPage} />
+      <Route path={"/homepage"} component={HomePage} />
+      <Route path={"/viewpage"} component={AddButton} />
         <div>
-          <ViewPage />
+          {/* <ViewPage /> */}
         </div>
         </Switch>
     </div>

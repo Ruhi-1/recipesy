@@ -20,7 +20,7 @@ const Header = (props) => {
           <ListItem component="div">
             <ListItemText inset>
               <TypoGraphy color="inherit" variant="subtitle1">
-              <Link  to='/home' className='NavBar-link'>Home </Link>
+              <Link  to='/homepage' className='NavBar-link'>Home </Link>
               </TypoGraphy>
             </ListItemText>
             <ListItemText inset>
