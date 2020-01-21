@@ -10,6 +10,7 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 // import '../Category/Category';
 
 function AddPage(props) {
+
     return (
         <div className="component">
             <Header />
@@ -60,7 +61,7 @@ function AddPage(props) {
 />
         </form>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <AddButton />
+        <AddButton state/>
         {/* <form align="center">
         <Button to="/viewpage"type="submit" variant="contained" color="primary">Add</Button>
         </form> */}
