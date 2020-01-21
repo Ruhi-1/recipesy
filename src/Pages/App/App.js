@@ -18,7 +18,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      recipe: Recipe,
+      recipe: [],
       user: userService.getUser()
     };
   }

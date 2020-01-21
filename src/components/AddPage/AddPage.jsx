@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import TextField from '@material-ui/core/TextField';
 import AddButton from '../AddButton/AddButton';
 // import { makeStyles } from '@material-ui/core/styles';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 // import '../Category/Category';
 
@@ -14,9 +15,7 @@ function AddPage(props) {
             <Header />
             <p align="center">Add Recipes</p>
         <div>
-        {/* <div>
-            <p>Title</p>
-        </div> */}        
+        
         <form  align="center" noValidate autoComplete="off">
             <TextField id="standard-basic" label="Title" />
         </form>
@@ -47,12 +46,18 @@ function AddPage(props) {
         </form>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <form align="center">
-        <TextField
+        {/* <TextField
             label="Instruction"
             id="filled-margin-none"
             // defaultValue="Description"
             variant="filled"
-        />
+        /> */}
+
+        <TextareaAutosize
+            rowsMax={30}
+            aria-label="maximum height"
+            placeholder="Description"
+/>
         </form>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <AddButton />
