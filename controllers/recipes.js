@@ -6,7 +6,6 @@ module.export = {
 }
 
 function create(req, res, next) {
-    console.log('sssssssssssssdddddd')
     User.findById(req.user).exec(function(err, user) {
         user.recipes.push(req.body);
         user.save(function (err) {
