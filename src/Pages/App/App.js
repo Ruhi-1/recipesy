@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 // import { Container } from '@material-ui/core';
 import Nav from '../../components/Nav/Nav';
@@ -7,7 +7,7 @@ import Nav from '../../components/Nav/Nav';
 import ViewPage from '../../components/ViewPage/ViewPage';
 import AddPage from '../../components/AddPage/AddPage';
 import userService from '../../utils/userService';
-import Recipe from '../../components/RecipePage/RecipePage';
+// import RecipePage from '../../components/RecipePage/RecipePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import HomePage from '../../components/HomePage/HomePage';
@@ -18,7 +18,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      recipe: [],
+      recipes: [],
       user: userService.getUser()
     };
   }
@@ -56,9 +56,11 @@ class App extends Component {
         />
       }/>
       <Route path={"/viewpage"} component={ViewPage} />
-      <Route path={"/addpage"} component={AddPage} />
+
+      <Route exact path={"/addpage"} 
+        render={props => <AddPage user={this.state.user}/>} />
       <Route path={"/homepage"} component={HomePage} />
-      <Route path={"/viewpage"} component={AddButton} />
+      {/* <Route path={"/viewpage"} component={AddButton} />  */}
         <div>
           {/* <ViewPage /> */}
         </div>
