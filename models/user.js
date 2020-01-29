@@ -3,24 +3,25 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
-
-var IngredientsSchema = new mongoose.Schema ({
+var ReviewsSchema = new mongoose.Schema ({
   text: {
       type: String,
-      required: true
+      // required: true
   },
 });
 
 var RecipesSchema = new mongoose.Schema ({
   title: {
       type: String,
-      required: true
+      // required: true
   },
   description: {
       type: String,
-      required: true
+      // required: true
   },
-  ingredients: [IngredientsSchema]
+  ingredients: {
+    type: String
+  }
 });
 
 
@@ -29,6 +30,7 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
   recipes: [RecipesSchema],
+  reviews: [ReviewsSchema]
 }, {
   timestamps: true
 });

@@ -12,37 +12,40 @@ class AddPage extends Component {
     state = {
         
         title: '',
-        ingredients: [],
+        ingredients: '',
         description: ''
-        
+    
     };
 
     
 
     handleSubmit = async e => {
-
+            console.log(this.props)
         e.preventDefault();
-        try {
-            await fetch("/addpage", {
-                method: 'POST',
-                headers: { 'content-Type': 'application/json'},
-                body: JSON.stringify({
-                    recipe: this.state,
-                    userEmail: this.props.user.email
-                })
-            })
-                .then(response => {
-                    return response.json();
-                })
-                // .then(res => res.json());
-                .then(data => {
-                    this.props.recipes(data);
-                    console.log(data);
-                });
-            }  catch (err) {
-                console.log(err);
+        this.props.handleAddRecipe(this.state, this.props.user)
+        // try {
+        //     await fetch("/api/recipes/addpage", {
+        //         method: 'POST',
+        //         headers: { 'content-Type': 'application/json'},
+        //         body: JSON.stringify({
+        //             recipe: this.state,
+        //             userEmail: this.props.user.email,
+        //             history: this.props.history.push('/viewpage')
+                    
+        //         })
+        //     })
+                // .then(response => {
+                //     return response.json();
+                // })
+                // // .then(res => res.json());
+                // .then(data => {
+                //     this.props.recipes(data);
+                //     console.log(data);
+                // });
+            // }  catch (err) {
+            //     console.log(err);
 
-            }
+            // }
         };
         isFormInvalid() {
             return !(this.state.title && this.state.ingredients && this.state.description);
@@ -50,22 +53,34 @@ class AddPage extends Component {
 
 
     handleChange =  e => {
+        
         // console.log("*******")
-        console.log("*******  name " + e.target.name)
-        console.log("******* value " + e.target.value)
+        // console.log("*******  name " + e.target.name)
+        // console.log("******* value " + e.target.value)
+            // if([e.target.name] ==="ingredient"){
+            //     this.setState(prevState => ({
+            //         ingredients: [...prevState.ingredients, e.target.value]
+            //     }));
+            // } else {
             this.setState({
-            [e.target.name]: e.target.value
-        });
+                [e.target.name]: e.target.value
+            }
+                // [e.target.name]: e.target.value
+                )
+            
         };
         
         // this.setState({
-        // if ([e.target.name]==='ingredients') {
+        //     if({[e.target.name]} == "ingredient"){
+ 
+        //     }
+        //     if ([e.target.name]==='ingredients') {
         //     [e.target.name]:[...this.state.[e.target.name], e.target.value]
         // } else {
         //     [e.target.name]: e.target.value
         // }
-        // });
-     //}
+        
+    
 
     render() {
     return (
@@ -119,4 +134,4 @@ class AddPage extends Component {
         );
     }
 };
-    export default AddPage;
+export default AddPage;

@@ -3,9 +3,11 @@ var router = express.Router();
 var recipesCtrl = require('../../controllers/recipes');
 
 // router.use(require('../../config/auth'));
-router.post('/', recipesCtrl.create);
+router.post('/addpage', recipesCtrl.create);
 // router.get('/addpage', recipesCtrl.index);
-router.get('/viewpage/:id', recipesCtrl.recipeList);
+router.get('/', recipesCtrl.index);
+router.get('/:id', recipesCtrl.delete);
+router.get('/:id', recipesCtrl.update);
 
 
 
