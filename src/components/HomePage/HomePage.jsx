@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
+import style from '../HomePage/HomePage.css';
+import Logo from './Logo/backgroundimg.jpg';
 
 function HomePage(props) {
     return (
         <div className="component">
             <Header />
-            <p align="center">Welcome to my recipe app</p>
+            <p className="center">Welcome to my recipe app</p>
+            <img src={Logo} height="100%" width="100%"/>
         </div>
     );
     }

@@ -1,0 +1,15 @@
+/* .background {
+    background-image: url("/backgroundimg.jpg");
+} */
+
+p.center {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Jim Nightshade', cursive;
+    color: rgb(56, 47, 87);
+}
+/* p.center {
+   
+} */
