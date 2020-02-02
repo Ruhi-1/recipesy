@@ -16,8 +16,7 @@ function ViewPage(props) {
       </div>
       <div className="ItemListPage-grid">
         <h1>My Recipes</h1>
-        {props.recipes.map(recipe =>
-          recipe.map(r => {
+        {props.recipes.map(r => {
             return (
               <ViewListItems
                 recipe={r}
@@ -26,7 +25,7 @@ function ViewPage(props) {
               />
             );
           })
-        )}
+        }
       </div>
     </>
   );

@@ -48,7 +48,7 @@ class App extends Component {
       this.setState(state => ({
         // Yay, filter returns a NEW array
         recipes: state.recipes.filter(r => r._id !== id)
-      }), () => this.props.history.push('/viewpage'));
+      }), () => this.props.history.push('/'));
     }
 
 
@@ -90,10 +90,10 @@ class App extends Component {
         handleSignupOrLogin={this.handleSignupOrLogin}
         />
       }/>
-      <Route path="/viewpage" render={({ location }) => 
+      <Route path="/viewpage" render={({ history }) => 
       <ViewPage 
       // handleLogout={this.handleLogout}
-      location={location}
+      history={history}
       user={this.state.user}
       recipes={this.state.recipes}
       handleDeleteRecipe={this.handleDeleteRecipe}
