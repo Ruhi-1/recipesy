@@ -35,7 +35,7 @@ const Header = (props) => {
           </ListItemText>
           <ListItemText inset>
             <TypoGraphy color="inherit" variant="subtitle1">
-              <Link to='' onClick={props.handleLogout}>LOG OUT</Link>
+              <Link to='/' onClick={props.handleLogout}>LOG OUT</Link>
             </TypoGraphy>
           </ListItemText>
         </ListItem>
