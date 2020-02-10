@@ -5,9 +5,68 @@ import Header from '../../components/Header/Header';
 import TextField from '@material-ui/core/TextField';
 // import AddButton from '../AddButton/AddButton';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import { blue } from '@material-ui/core/colors';
+import Button from '@material-ui/core/Button';
+import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+
+
+
 
 // import '../Category/Category';
 
+const BootstrapButton = withStyles({
+    root: {
+      boxShadow: 'none',
+      textTransform: 'none',
+      fontSize: 16,
+      padding: '6px 12px',
+      border: '1px solid',
+      lineHeight: 1.5,
+      backgroundColor: '#007bff',
+      borderColor: '#007bff',
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        backgroundColor: '#0069d9',
+        borderColor: '#0062cc',
+        boxShadow: 'none',
+      },
+      '&:active': {
+        boxShadow: 'none',
+        backgroundColor: '#0062cc',
+        borderColor: '#005cbf',
+      },
+      '&:focus': {
+        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+      },
+    },
+  })(Button);
+
+//   const useStyles = makeStyles(theme => ({
+//     margin: {
+//       margin: theme.spacing(1),
+//     },
+//   }));
+
+const ColorButton = withStyles(theme => ({
+    root: {
+      color: theme.palette.getContrastText(blue[500]),
+      backgroundColor: blue[500],
+      '&:hover': {
+        backgroundColor: blue[700],
+      },
+    },
+  }))(Button);
 class AddPage extends Component {
     state = {
         
@@ -17,7 +76,7 @@ class AddPage extends Component {
     
     };
 
-    
+   
 
     handleSubmit = async e => {
             console.log(this.props)
@@ -80,9 +139,11 @@ class AddPage extends Component {
         //     [e.target.name]: e.target.value
         // }
         
-    
+
 
     render() {
+        // const classes = useStyles();
+
     return (
         <div>
             <Header />
@@ -120,13 +181,13 @@ class AddPage extends Component {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {/* <AddButton /> */}
         <div align="center">
-        <button 
+        <ColorButton 
         type="submit" 
-        className="btn btn-default" 
+        // className={classes.margin} 
         variant="contained" 
         color="primary"
         disabled={this.isFormInvalid()}
-        >Add</button>
+        >Add</ColorButton>
         </div>
         </form>
         </div>
