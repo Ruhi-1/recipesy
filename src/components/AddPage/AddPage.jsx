@@ -3,28 +3,23 @@ import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
 import Header from '../../components/Header/Header';
 import TextField from '@material-ui/core/TextField';
-// import AddButton from '../AddButton/AddButton';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import { blue } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
 
-
-
-// import '../Category/Category';
-
 const BootstrapButton = withStyles({
     root: {
-      boxShadow: 'none',
-      textTransform: 'none',
-      fontSize: 16,
-      padding: '6px 12px',
-      border: '1px solid',
-      lineHeight: 1.5,
-      backgroundColor: '#007bff',
-      borderColor: '#007bff',
-      fontFamily: [
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#007bff',
+    borderColor: '#007bff',
+    fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -35,22 +30,22 @@ const BootstrapButton = withStyles({
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
-      ].join(','),
-      '&:hover': {
+        ].join(','),
+        '&:hover': {
         backgroundColor: '#0069d9',
         borderColor: '#0062cc',
         boxShadow: 'none',
-      },
-      '&:active': {
+        },
+        '&:active': {
         boxShadow: 'none',
         backgroundColor: '#0062cc',
         borderColor: '#005cbf',
-      },
-      '&:focus': {
+        },
+        '&:focus': {
         boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-      },
+        },
     },
-  })(Button);
+    })(Button);
 
 //   const useStyles = makeStyles(theme => ({
 //     margin: {
@@ -60,13 +55,13 @@ const BootstrapButton = withStyles({
 
 const ColorButton = withStyles(theme => ({
     root: {
-      color: theme.palette.getContrastText(blue[500]),
-      backgroundColor: blue[500],
-      '&:hover': {
+    color: theme.palette.getContrastText(blue[500]),
+    backgroundColor: blue[500],
+    '&:hover': {
         backgroundColor: blue[700],
-      },
     },
-  }))(Button);
+    },
+}))(Button);
 class AddPage extends Component {
     state = {
         
@@ -75,8 +70,6 @@ class AddPage extends Component {
         description: ''
     
     };
-
-   
 
     handleSubmit = async e => {
             console.log(this.props)
@@ -131,7 +124,6 @@ class AddPage extends Component {
         
         // this.setState({
         //     if({[e.target.name]} == "ingredient"){
- 
         //     }
         //     if ([e.target.name]==='ingredients') {
         //     [e.target.name]:[...this.state.[e.target.name], e.target.value]
